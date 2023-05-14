@@ -5,7 +5,6 @@ I created this application because my parents asked me to keep a track of all re
 As usual my programmer brain starts ticking and I come up with this app.
 
 ## Technology used
--------------------
 
 Framework: **Django**
 
@@ -14,7 +13,6 @@ Database: **Sqlite3**
 Language: **Python**
 
 ## Installation Steps
------------------------
 
 1. First and foremost download the important folders only.
 
@@ -63,6 +61,5 @@ python manage.py runserver
 [HealthMonitorApp](http://localhost:8000)
 
 ## Promise
------------
 
 I will try to deploy this app once its done or release a dockerzed solution
