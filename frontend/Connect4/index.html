@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Connect 4</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="cotainer" id="header">
+		<h1>Welcome to Connect Four!</h1>	
+		<p class="game-text" id="description">The object of the game is to connect four of your chips in a row!</p>
+	</div>
+	<div class="container" id="game-content">
+		<p class="game-text" id="game-prompt">Let's get started!</p>
+		<div id="game-board">
+			<table class="board">
+				<tr class="game-row" id="row-1">
+					<td class="chip-slot-A">
+						<button class="game-button" id="cs-A" type="button"></button>
+					</td>
+					<td class="chip-slot-B">
+						<button class="game-button" id="cs-B" type="button"></button>
+					</td>
+					<td class="chip-slot-C">
+						<button class="game-button" id="cs-C" type="button"></button>
+					</td>
+					<td class="chip-slot-D">
+						<button class="game-button" id="cs-D" type="button"></button>
+					</td>
+					<td class="chip-slot-E">
+						<button class="game-button" id="cs-E" type="button"></button>
+					</td>
+					<td class="chip-slot-F">
+						<button class="game-button" id="cs-F" type="button"></button>
+					</td>
+					<td class="chip-slot-G">
+						<button class="game-button" id="cs-G" type="button"></button>
+					</td>
+				</tr>
+				<tr class="game-row" id="row-2">
+					<td class="chip-slot-A">
+						<button class="game-button" id="cs-A" type="button"></button>
+					</td>
+					<td class="chip-slot-B">
+						<button class="game-button" id="cs-B" type="button"></button>
+					</td>
+					<td class="chip-slot-C">
+						<button class="game-button" id="cs-C" type="button"></button>
+					</td>
+					<td class="chip-slot-D">
+						<button class="game-button" id="cs-D" type="button"></button>
+					</td>
+					<td class="chip-slot-E">
+						<button class="game-button" id="cs-E" type="button"></button>
+					</td>
+					<td class="chip-slot-F">
+						<button class="game-button" id="cs-F" type="button"></button>
+					</td>
+					<td class="chip-slot-G">
+						<button class="game-button" id="cs-G" type="button"></button>
+					</td>
+				</tr>
+				<tr class="game-row" id="row-3">
+					<td class="chip-slot-A">
+						<button class="game-button" id="cs-A" type="button"></button>
+					</td>
+					<td class="chip-slot-B">
+						<button class="game-button" id="cs-B" type="button"></button>
+					</td>
+					<td class="chip-slot-C">
+						<button class="game-button" id="cs-C" type="button"></button>
+					</td>
+					<td class="chip-slot-D">
+						<button class="game-button" id="cs-D" type="button"></button>
+					</td>
+					<td class="chip-slot-E">
+						<button class="game-button" id="cs-E" type="button"></button>
+					</td>
+					<td class="chip-slot-F">
+						<button class="game-button" id="cs-F" type="button"></button>
+					</td>
+					<td class="chip-slot-G">
+						<button class="game-button" id="cs-G" type="button"></button>
+					</td>
+				</tr>
+				<tr class="game-row" id="row-4">
+					<td class="chip-slot-A">
+						<button class="game-button" id="cs-A" type="button"></button>
+					</td>
+					<td class="chip-slot-B">
+						<button class="game-button" id="cs-B" type="button"></button>
+					</td>
+					<td class="chip-slot-C">
+						<button class="game-button" id="cs-C" type="button"></button>
+					</td>
+					<td class="chip-slot-D">
+						<button class="game-button" id="cs-D" type="button"></button>
+					</td>
+					<td class="chip-slot-E">
+						<button class="game-button" id="cs-E" type="button"></button>
+					</td>
+					<td class="chip-slot-F">
+						<button class="game-button" id="cs-F" type="button"></button>
+					</td>
+					<td class="chip-slot-G">
+						<button class="game-button" id="cs-G" type="button"></button>
+					</td>
+				</tr>
+				<tr class="game-row" id="row-5">
+					<td class="chip-slot-A">
+						<button class="game-button" id="cs-A" type="button"></button>
+					</td>
+					<td class="chip-slot-B">
+						<button class="game-button" id="cs-B" type="button"></button>
+					</td>
+					<td class="chip-slot-C">
+						<button class="game-button" id="cs-C" type="button"></button>
+					</td>
+					<td class="chip-slot-D">
+						<button class="game-button" id="cs-D" type="button"></button>
+					</td>
+					<td class="chip-slot-E">
+						<button class="game-button" id="cs-E" type="button"></button>
+					</td>
+					<td class="chip-slot-F">
+						<button class="game-button" id="cs-F" type="button"></button>
+					</td>
+					<td class="chip-slot-G">
+						<button class="game-button" id="cs-G" type="button"></button>
+					</td>
+				</tr>
+				<tr class="game-row" id="row-6">
+					<td class="chip-slot-A">
+						<button class="game-button" id="cs-A" type="button"></button>
+					</td>
+					<td class="chip-slot-B">
+						<button class="game-button" id="cs-B" type="button"></button>
+					</td>
+					<td class="chip-slot-C">
+						<button class="game-button" id="cs-C" type="button"></button>
+					</td>
+					<td class="chip-slot-D">
+						<button class="game-button" id="cs-D" type="button"></button>
+					</td>
+					<td class="chip-slot-E">
+						<button class="game-button" id="cs-E" type="button"></button>
+					</td>
+					<td class="chip-slot-F">
+						<button class="game-button" id="cs-F" type="button"></button>
+					</td>
+					<td class="chip-slot-G">
+						<button class="game-button" id="cs-G" type="button"></button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<script src="gameMechanics.js"></script>
+</body>
+</html>

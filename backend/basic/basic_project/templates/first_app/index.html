@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static "css/indexStyles.css" %}">
+	<title>Basic Project-First App</title>
+</head>
+
+<body>
+	<h1>Welcome to the Access Records of Webpages</h1>
+
+	<div class="records">
+		{% if access_records %}
+		<table>
+			<th>Site Name</th>
+			<th>Date Accessed</th>
+
+			{% for acc in access_records%}
+			<tr>
+				<td>{{ acc.name }}</td>
+				<td>{{ acc.date }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+
+		{% else %}
+		<table>
+			<tr>
+				<th>Site Name</th>
+				<th>Date Accessed</th>
+			</tr>			
+		</table>
+		{% endif %}
+
+
+	</div>
+</body>
+
+</html>

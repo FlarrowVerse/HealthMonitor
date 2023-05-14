@@ -1,0 +1,38 @@
+img {
+	height: 600px;
+	width: 600px;
+
+	border: 1rem solid #423CBF;
+	border-radius: 0.5rem;
+}
+
+li {
+	margin-left: 20px;
+	margin-right: 40px;
+
+	padding: 30px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	margin-bottom: 20px;
+
+	background-color: #f1c232;
+	border: 5px solid #ffcf40;
+	border-radius: 2rem;
+}
+
+label {
+	font-weight: 500;
+	font-size: 3rem;
+	color: #423CBF;
+}
+
+h1 {
+	font-size: 5rem;
+}
+
+h3 {
+	font-size: 3rem;
+}

@@ -1,0 +1,8 @@
+.records {
+	border: 2px solid black;	
+	width: fit-content;
+}
+
+th, td {
+	border: 2px solid black;
+}
