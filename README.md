@@ -10,7 +10,11 @@ Framework: **Django**
 
 Database: **Sqlite3**
 
-Language: **Python**
+Languages Used: 
+
+1. **Python**
+2. **HTML**
+3. **CSS**
 
 ## Installation Steps
 
