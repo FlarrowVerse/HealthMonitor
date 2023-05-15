@@ -5,7 +5,17 @@
 </head>
 <body>
 	<div class="container">
-		{{ page_desc }}
+		<h1>{{ page_desc }}</h1>
+		
+		<ul>
+			{% for patient in patient_list %}
+			<li>
+				<a href="{% url 'patient-dash' patient.patient_id %}">
+					{{ patient.patient_id }}: {{ patient.first_name }} {{ patient.last_name }}
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
 	</div>
 </body>
 </html>

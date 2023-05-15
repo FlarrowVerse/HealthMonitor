@@ -5,7 +5,31 @@
 </head>
 <body>
 	<div class="container">
-		{{ page_desc }}
+		<h1>{{ page_desc }}</h1>
+
+		<label for="patient-id">Patient ID:</label>
+		<b>{{ details.patient_id }}</b><br>
+
+		<label for="name">Name:</label>
+		<b>{{ details.first_name }} {{ details.last_name }}</b><br>
+
+		<label for="dob">Date of Birth:</label>
+		<b>{{ details.dob }}</b><br>
+
+		<label for="age">Age:</label>
+		<b>{{ details.age }}</b><br>
+
+		<h3>Records::::::></h3>
+		<ul>
+			{% for date in records %}
+			<li>
+				<a href="{% url 'record' details.patient_id %}?recid={{ date }}">
+					{{ date }}
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+
 	</div>
 </body>
 </html>
