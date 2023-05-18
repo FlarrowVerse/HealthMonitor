@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # dummy data
 
@@ -82,11 +81,20 @@ dummy_records = [
 # Create your views here.
 
 def index(request):
-	return HttpResponse('''
-	<h1>This is the Main application</h1>
-	<a href="http://localhost:8000/">Go to SignUp App</a>
-	<a href="http://localhost:8000/main/dashboard">Login</a>
-	''')
+	inputs = {
+		'login': [
+			{'name': 'username', 'type': 'text', 'label': 'Username'}, 
+			{'name': 'password', 'type': 'password', 'label': 'Password'}, 
+		],
+		'register': [
+			{'name': 'fullname', 'type': 'text', 'label': 'Full Name'}, 
+			{'name': 'username', 'type': 'text', 'label': 'Username'}, 
+			{'name': 'email', 'type': 'email', 'label': 'Email ID'}, 
+			{'name': 'password', 'type': 'password', 'label': 'Password'}, 
+			{'name': 're-password', 'type': 'password', 'label': 'Confirm Password'}, 
+		]
+	}
+	return render(request, 'main/index.html', context=inputs)
 
 def dashboard(request):
 	patient_details = [
