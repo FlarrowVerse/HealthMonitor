@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
+
+from Main.forms import RegisterForm, LoginForm
 
 # dummy data
 
@@ -81,20 +85,70 @@ dummy_records = [
 # Create your views here.
 
 def index(request):
+
+	if request.method == 'POST':
+		registerForm = RegisterForm(request.POST)
+		loginForm = LoginForm(request.POST)
+
+		if loginForm.is_valid():
+			username, password = loginForm.cleaned_data.values()
+			print(f'Trying to login: {username}/{password}')
+		elif registerForm.is_valid():
+			username, first_name, last_name, password, re_password  = registerForm.cleaned_data.values()
+			print(f'Trying to register::' \
+				f'{username}/{password}/{re_password}: {first_name} {last_name}'
+			)
+		else:
+			print('Invalid Data!!')
+	else:
+		print('Invalid Method Invoked!')
+
 	inputs = {
 		'login': [
 			{'name': 'username', 'type': 'text', 'label': 'Username'}, 
 			{'name': 'password', 'type': 'password', 'label': 'Password'}, 
 		],
 		'register': [
-			{'name': 'fullname', 'type': 'text', 'label': 'Full Name'}, 
+			{'name': 'first_name', 'type': 'text', 'label': 'First Name'}, 
+			{'name': 'last_name', 'type': 'text', 'label': 'Last Name'},
 			{'name': 'username', 'type': 'text', 'label': 'Username'}, 
 			{'name': 'email', 'type': 'email', 'label': 'Email ID'}, 
 			{'name': 'password', 'type': 'password', 'label': 'Password'}, 
-			{'name': 're-password', 'type': 'password', 'label': 'Confirm Password'}, 
+			{'name': 're_password', 'type': 'password', 'label': 'Confirm Password'}, 
 		]
 	}
+	
 	return render(request, 'main/index.html', context=inputs)
+
+def login_view(request):
+	if request.method == 'POST':		
+		loginForm = LoginForm(request.POST)
+
+		if loginForm.is_valid():
+			username, password = loginForm.cleaned_data.values()
+			print(f'Trying to login: {username}/{password}')
+		else:
+			print('Invalid Data!!')
+	else:
+		print('Invalid Method Invoked!')
+
+	return dashboard(request)
+
+def register_view(request):
+	if request.method == 'POST':
+		registerForm = RegisterForm(request.POST)
+
+		if registerForm.is_valid():
+			username, first_name, last_name, password, re_password  = registerForm.cleaned_data.values()
+			print(f'Trying to register::' \
+				f'{username}/{password}/{re_password}: {first_name} {last_name}'
+			)
+		else:
+			print('Invalid Data!!')
+	else:
+		print('Invalid Method Invoked!')
+
+	return dashboard(request)
 
 def dashboard(request):
 	patient_details = [
