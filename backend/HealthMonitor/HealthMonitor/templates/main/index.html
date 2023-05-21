@@ -12,7 +12,7 @@
 <body class="bg-dark bg-gradient text-white">
 	<script>
 		function register() {
-			window.location.href = "{% url 'signup:index' %}"
+			console.log('Registered');
 		}
 
 		function login() {
@@ -26,14 +26,14 @@
 
 		<div class="container-fluid d-flex justify-content-center align-items-center">
 
-			<div id="login-form" class="container p-5 m-5 border border-5 border-success rounded">
+			<div id="login-form" class="container p-4 m-5 border border-5 border-success rounded">
 				<form>
 					{% for field in login %}
 					<div class="row mb-3">
 						<label for="{{ field.name }}" class="col-lg-2 col-form-label">
 							{{ field.label }}
 						</label>
-						<div class="col-lg-6">
+						<div class="col-lg-9">
 							<input type="{{ field.type }}" name="{{ field.name }}" class="form-control">
 						</div>
 					</div>
@@ -49,14 +49,14 @@
 				</form>
 			</div>
 
-			<div id="register-form" class="container p-5 border border-5 border-primary rounded">
+			<div id="register-form" class="container p-4 m-5 border border-5 border-primary rounded">
 				<form>
 					{% for field in register %}
 					<div class="row mb-3">
 						<label for="{{ field.name }}" class="col-lg-2 col-form-label">
 							{{ field.label }}
 						</label>
-						<div class="col-lg-7">
+						<div class="col-lg-9">
 							<input type="{{ field.type }}" name="{{ field.name }}" class="form-control">
 						</div>
 					</div>
@@ -65,7 +65,7 @@
 					<div class="row mb-3">
 						<div class="col-lg-5">
 							<button type="button" onclick="register()" class="btn btn-lg btn-primary">
-								Regsiter
+								Register
 							</button>
 						</div>
 					</div>

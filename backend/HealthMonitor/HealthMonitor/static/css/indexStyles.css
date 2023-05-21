@@ -1,0 +1,9 @@
+#login-form {
+	max-height: fit-content;
+	max-width: 35em;
+}
+
+#register-form {
+	max-height: fit-content;
+	max-width: 50em;
+}
